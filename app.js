@@ -93,13 +93,13 @@ document.querySelector(".btn-hold").addEventListener("click",function(){
 
     //add current score to global score
     totalscore[activePlayer] += playingScore;
-    
+    activePlayer === 0 ?firstTotal.textContent = totalscore[activePlayer] 
+    :secondTotal.textContent = totalscore[activePlayer];
 
     if(totalscore[activePlayer] >= 15){
         document.getElementById("name-" + activePlayer).textContent = "Winner";
         diceRef.style.display = "none";
-        activePlayer === 0 ?firstTotal.textContent = totalscore[activePlayer] 
-        :secondTotal.textContent = totalscore[activePlayer];
+        
         document.querySelector(".player-" + activePlayer + "-panel" ).classList.add("winner");
         document.querySelector(".player-" + activePlayer + "-panel" ).classList.remove("active");
     }
